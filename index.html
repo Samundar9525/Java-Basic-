@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Interview Revision Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="nameModal" class="name-modal">
+    <div class="name-modal-content">
+      <h1>Welcome to Java Interview Lab</h1>
+      <p>Please enter your name to get started:</p>
+      <input type="text" id="candidateName" placeholder="Enter your full name" class="name-input" />
+      <button id="startBtn" class="primary-btn">Start Interview</button>
+    </div>
+  </div>
+
+  <main class="app-shell">
+    <section class="topbar" aria-label="Quiz overview">
+      <div class="topic-picker">
+        <p class="eyebrow">Java interview simulator</p>
+        <label for="categoryFilter">Topic</label>
+        <select id="categoryFilter"></select>
+      </div>
+      <div class="score-strip">
+        <div>
+          <span id="score">0</span>
+          <small>Question</small>
+        </div>
+        <div>
+          <span id="streak">0</span>
+          <small>Total</small>
+        </div>
+        <div>
+          <span id="accuracy">0%</span>
+          <small>Viewed</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="stage" class="stage is-asking" aria-label="Interview stage">
+      <section class="conversation panel">
+        <div class="people-scene">
+          <div class="person-card interviewer-card">
+            <div class="figure interviewer-figure">
+              <div class="head">
+                <span class="hair hair-left"></span>
+                <span class="hair hair-top"></span>
+                <span class="ear"></span>
+                <span class="eye eye-left"></span>
+                <span class="eye eye-right"></span>
+                <span class="brow brow-left"></span>
+                <span class="brow brow-right"></span>
+                <span class="nose"></span>
+                <span class="mouth"></span>
+                <span class="beard"></span>
+              </div>
+              <div class="neck"></div>
+              <div class="body">
+                <span class="shirt"></span>
+                <span class="jacket"></span>
+                <span class="arm arm-left"></span>
+                <span class="arm arm-right"></span>
+              </div>
+            </div>
+            <div>
+              <span class="role">Interviewer</span>
+              <strong>Siddhartha</strong>
+            </div>
+          </div>
+
+          <div class="interview-table" aria-hidden="true">
+            <div class="table-top">
+              <span class="coffee-cup"></span>
+              <span class="notepad"></span>
+              <span class="pen"></span>
+            </div>
+            <div class="table-leg table-leg-left"></div>
+            <div class="table-leg table-leg-right"></div>
+          </div>
+
+          <div class="scene-question">
+            <div class="speech-bubble question-bubble">
+              <div class="meta-line">
+                <span id="category">Core Java</span>
+                <span id="counter">Question 1 of 1</span>
+              </div>
+              <h2 id="questionText">Loading question...</h2>
+            </div>
+          </div>
+
+          <div class="person-card candidate-card">
+            <div>
+              <span class="role">Candidate</span>
+              <strong id="candidateDisplayName">You</strong>
+            </div>
+            <div class="figure candidate-figure">
+              <div class="head">
+                <span class="hair hair-left"></span>
+                <span class="hair hair-top"></span>
+                <span class="ear"></span>
+                <span class="eye eye-left"></span>
+                <span class="eye eye-right"></span>
+                <span class="brow brow-left"></span>
+                <span class="brow brow-right"></span>
+                <span class="nose"></span>
+                <span class="mouth"></span>
+              </div>
+              <div class="neck"></div>
+              <div class="body">
+                <span class="shirt"></span>
+                <span class="jacket"></span>
+                <span class="arm arm-left"></span>
+                <span class="arm arm-right"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="scene-answer answer-with-avatars">
+            <div class="avatar-box interviewer-avatar">😊</div>
+            <div class="avatar-box candidate-avatar">🤔</div>
+            <div class="speech-bubble answer-bubble is-hidden">
+              <div class="answer-head">
+                <span>Candidate answer</span>
+                <button id="copyAnswerBtn" class="ghost-btn" type="button">Copy answer</button>
+              </div>
+              <p id="answerText" class="answer-text"></p>
+              <pre id="codeBlock" class="code-block hidden"></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-label="Quiz progress">
+          <div id="progressBar"></div>
+        </div>
+
+        <div class="actions">
+          <button id="answerBtn" class="secondary-btn" type="button">Answer</button>
+          <button id="nextBtn" class="primary-btn" type="button">Next Question</button>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
